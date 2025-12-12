@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de dado</title>
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            padding: 50px;
+            background:#eef
+            
+        }
+        input, button{
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Verifique o tipo de dado</h1>
+    <input type="text" id="entrada" placeholder="Digite algo...">
+    <button onclick="verificarTipo()">Verificar tipo</button>
+    <p id="resultado"></p>
+    <script>
+        function verificarTipo(){
+            let valor =  document.getElementById ("entrada").value;
+            if (valor==="true"||valor==="false"){
+                document.getElementById ("resultado").innerText="tipo: boolean";
+                return;
+            }
+            if (!isNaN(valor)&&valor.trim()!==""){
+                document.getElementById ("resultado").innerText="tipo: number";
+                return;
+            }
+            document.getElementById ("resultado").innerText="tipo: string"
+
+        }
+    </script>
+</body>
+</html>
